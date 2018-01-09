@@ -34,9 +34,23 @@ if(isset($_POST["formulaire"])) {
     }
 
     else {
-        $connexion = mysqli_connect("localhost", "root", "", "blog");
-        $requete = "INSERT INTO t_users (`ID_USER`, `USERNOM`, `USERPRENOM`, `USERMAIL`, `USERPASSWORD`) VALUES (NULL, $nom, $prenom, $mail, $mdp);";
-        var_dump($requete);
+        $connexion = mysqli_connect("localhost", "NFactoryBlog", "NFactoryBlog", "nfactoryblog");
+
+        if (!$connexion) {
+            die("Erreur MySQL " . mysqli_connect_errno() . " : " . mysqli_connect_error());
+        }
+
+        else {
+            $requete = "INSERT INTO t_users (ID_USER, USERNAME, USERFNAME,
+                        USERMAIL, USERPASSWORD, USERDATEINS, T_ROLES_ID_ROLE)
+                        VALUES (NULL, '$nom', '$prenom', '$mail', '$mdp', NULL, 5);";
+
+            mysqli_query($connexion, $requete);
+            mysqli_close($connexion);
+        }
+
+
+
     }
 }
 
