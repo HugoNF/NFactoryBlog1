@@ -1,3 +1,4 @@
+
 <form method="post" action="#">
     <div>
         <label for="mail">Adresse mail : </label>

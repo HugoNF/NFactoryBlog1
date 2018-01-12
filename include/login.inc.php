@@ -37,15 +37,18 @@ if (isset($_POST['login'])) {
 
             $requete = "SELECT * FROM t_users WHERE USERMAIL='$mail' AND USERPASSWORD='$password'";
 
-            die($requete);
+            if($result = mysqli_query($connexion, $requete)) {
+                if (mysqli_num_rows($result) > 0) {
+                    $_SESSION['login'] = 1;
+                    echo ("<a href=\"index.php?page=accueil\">Vous êtes authentifié, viendez à la page d'accueil</a>");
+                }
+                else
+                    $_SESSION['login'] = 0;
 
-            mysqli_query($connexion, $requete);
-
-
-            mysqli_close($connexion);
-
+            }
 
         }
+        mysqli_close($connexion);
     }
 }
 
