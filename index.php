@@ -10,7 +10,8 @@ include_once ("./functions/callPage.php");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./assets/css/screen.css" type="text/css" rel="stylesheet" />
     <title>Blog</title>
-    <script src="./assets/javascript/functions.js"></script>
+    <script type="text/javascript" src="./assets/javascript/functions.js"></script>
+    <script type="text/javascript" src="./assets/javascript/tinymce/tinymce.min.js"></script>
 </head>
 <body>
 <div id="container">
