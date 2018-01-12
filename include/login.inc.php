@@ -40,7 +40,8 @@ if (isset($_POST['login'])) {
             if($result = mysqli_query($connexion, $requete)) {
                 if (mysqli_num_rows($result) > 0) {
                     $_SESSION['login'] = 1;
-                    echo ("<a href=\"index.php?page=accueil\">Vous êtes authentifié, viendez à la page d'accueil</a>");
+                    echo ("<script>redirection(\"index.php?page=accueil\");</script>
+                    <a href=\"index.php?page=accueil\">Vous êtes authentifié, viendez à la page d'accueil</a>");
                 }
                 else
                     $_SESSION['login'] = 0;
