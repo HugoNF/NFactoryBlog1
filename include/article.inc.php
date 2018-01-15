@@ -5,7 +5,7 @@ if(isset($_SESSION['login'])) {
         $tabErreur = array();
         $titre = $_POST["titre"];
         $chapo = $_POST["chapo"];
-        $contenu = $_POST["contenu"];
+
         $date = $_POST["date"];
         if ($titre == "") {
             array_push($tabErreur, "Veuillez saisir un titre");
@@ -28,6 +28,7 @@ if(isset($_SESSION['login'])) {
             echo($message);
             include("./include/formarticle.php");
         } else {
+
             $connexion = mysqli_connect("localhost", "root", "", "nfactoryblog");
             $requete2 = "INSERT INTO t_articles (ID_ARTICLE, ARTTITRE, ARTCHAPO, ARTCONTENU, ARTDATE) VALUES (NULL, '$titre', '$chapo','$contenu', '$date')";
             mysqli_query($connexion, $requete2);

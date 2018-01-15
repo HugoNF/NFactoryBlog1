@@ -1,8 +1,11 @@
 @import url("reset.css");
 
+
 body {
-    background: #8c5737;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../img/176123.jpg");
+    background-size: cover;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    color: #c1422c;
 }
 
 a {
@@ -17,13 +20,15 @@ div#container {
 header {
     height: 15px;
     padding: 30px 0 0;
-    background: #0086ff;
+    padding-bottom: 30px;
+    background: #993423;
     border-radius: 5px;
     box-shadow: 3px 3px 3px black;
 }
 
 header ul li {
     float: left;
+    border-radius: 3px;
 }
 
 header ul li a {
@@ -31,27 +36,44 @@ header ul li a {
     height: 15px;
     line-height: 15px;
     padding: 0 10px;
+    text-decoration: none;
+    color: #0086ff;
+}
+
+header ul li:hover{
+    background-color: #2e6150;
+    box-shadow: 2px 2px 2px#3A3A3A;
+}
+
+header ul li a:hover{
+    color: #993423;
 }
 
 main {
     min-height: 200px;
+    background-color: rgba(46, 97, 80, 0.7);
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px black;
+}
+
+.contenu{
+    padding-left:225px;
 }
 
 footer {
     height: 50px;
     line-height: 50px;
-    background: #0086ff;
+    background: #993423;
     border-radius: 5px;
     box-shadow: 3px 3px 3px black;
 }
 
 footer p {
     text-align: center;
-    color: #8c5737;
+    color: #0086ff;
 }
 
-main {
-    margin-top: 5px;
-    margin-right: 10px;
-    margin-left: 10px;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto')
