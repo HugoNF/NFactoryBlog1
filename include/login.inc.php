@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
     }
 
     else {
-        $connexion = mysqli_connect("localhost", "NFactoryBlog", "NFactoryBlog", "nfactoryblog");
+        $connexion = mysqli_connect("localhost", "root", "", "nfactoryblog");
 
         if (!$connexion) {
             die("Erreur MySQL " . mysqli_connect_errno() . " : " . mysqli_connect_error());
