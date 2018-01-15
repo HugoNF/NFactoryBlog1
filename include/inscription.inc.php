@@ -35,6 +35,7 @@ if(isset($_POST["formulaire"])) {
 
     else {
         $connexion = mysqli_connect("localhost", "root", "", "nfactoryblog");
+        $mdp = sha1 ($_POST["password"]);
 
         if (!$connexion) {
             die("Erreur MySQL " . mysqli_connect_errno() . " : " . mysqli_connect_error());
