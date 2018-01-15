@@ -1,5 +1,4 @@
 <?php
-<?php
 echo("<h1>Article</h1>");
 if(isset($_SESSION['login'])) {
     if (isset($_POST['formulaire3'])) {
