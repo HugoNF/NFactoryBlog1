@@ -13,7 +13,8 @@ a {
 }
 
 div#container {
-    width: 700px;
+    width: 1300px;
+    height: auto;
     margin: auto;
 }
 
@@ -50,7 +51,7 @@ header ul li a:hover{
 }
 
 main {
-    min-height: 200px;
+    min-height: 500px;
     background-color: rgba(46, 97, 80, 0.7);
     padding-top: 5px;
     padding-right: 10px;
@@ -59,8 +60,8 @@ main {
     box-shadow: 3px 3px 3px black;
 }
 
-.contenu{
-    padding-left:225px;
+textarea {
+    min-height: 300px;
 }
 
 footer {
@@ -76,4 +77,4 @@ footer p {
     color: #0086ff;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto')
+@import url('https://fonts.googleapis.com/css?family=Roboto');

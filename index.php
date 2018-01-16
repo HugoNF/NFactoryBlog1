@@ -12,6 +12,11 @@ include_once ("./functions/callPage.php");
     <title>Blog</title>
     <script type="text/javascript" src="./assets/javascript/functions.js"></script>
     <script type="text/javascript" src="./assets/javascript/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea'
+        });
+    </script>
 </head>
 <body>
 <div id="container">

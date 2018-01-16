@@ -5,6 +5,7 @@ if(isset($_SESSION['login'])) {
         $tabErreur = array();
         $titre = $_POST["titre"];
         $chapo = $_POST["chapo"];
+        $contenu = $_POST["contenu"];
 
         $date = $_POST["date"];
         if ($titre == "") {
@@ -30,6 +31,9 @@ if(isset($_SESSION['login'])) {
         } else {
 
             $connexion = mysqli_connect("localhost", "root", "", "nfactoryblog");
+            $contenu= addslashes(htmlentities($contenu));
+            $chapo=addslashes(utf8_decode(htmlentities($chapo)));
+            $titre=addslashes(utf8_decode(htmlentities($titre)));
             $requete2 = "INSERT INTO t_articles (ID_ARTICLE, ARTTITRE, ARTCHAPO, ARTCONTENU, ARTDATE) VALUES (NULL, '$titre', '$chapo','$contenu', '$date')";
             mysqli_query($connexion, $requete2);
             mysqli_close($connexion);
