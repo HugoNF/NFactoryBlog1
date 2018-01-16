@@ -44,7 +44,7 @@ header ul li a {
 header ul li:hover{
     background: linear-gradient(#98aa63,#3b6a43,#264936);.
     box-shadow: 2px 2px 2px#3A3A3A;
-    height: 20px;
+    height: 21px;
 }
 
 header ul li a:hover{
