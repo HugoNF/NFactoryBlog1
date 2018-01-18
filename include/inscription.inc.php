@@ -14,7 +14,7 @@ if(isset($_POST["formulaire"])) {
     if($_POST["prenom"] == "")
         array_push($tabErreur, "Veuillez saisir votre prénom");
 
-    if($_POST["mail"] == "")
+    if($_POST["mail"] == "" || !filter_var($mail,FILTER_VALIDATE_EMAIL))
         array_push($tabErreur, "Veuillez saisir votre e-mail");
 
     if($_POST["mdp"] == "")
