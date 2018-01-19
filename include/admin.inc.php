@@ -5,12 +5,10 @@ if($_SESSION['admin']==1) {
     $result= mysqli_query($connexion,$requete);
     echo"<table>";
     while ($donnees=mysqli_fetch_array($result)){
-        echo "<tr>
-        			<td> $donnees['USERNAME']</td>
-        			<td>".$donnees['USERFNAME']"</td>"."<td>".$donnees['USERMAIL']
-        ."</td>"."<td>".$donnees['T_ROLES_ID_ROLE']."</td>"."<td>"."<form method='post' action='#'>"."<select name='select'><option value='1'>1</option>
-            <option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option>
-            </select> "."</td>"."<td>"."<input type='submit' value='Mettre a jour' name='formulaire'>"."</form>"."</td>"."</tr>");
+        echo("<tr><td>".$donnees['USERNAME']."</td>"."<td>".$donnees['USERFNAME']."</td>"."<td>".$donnees['USERMAIL']
+            ."</td>"."<td>".$donnees['T_ROLES_ID_ROLE']."</td>"."<td>"."<form method='post' action='#'>"."<select name='select'><option value='1'>1</option>
+            <option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='7'>7</option>
+            </select> "."</td>"."<td>"."<input type='text' name='id'><input type='submit' value='Mettre a jour' name='formulaire'>"."</form>"."</td>"."</tr>");
         $_SESSION['id']=$donnees['ID_USER'];
     }
     echo("</table>");
