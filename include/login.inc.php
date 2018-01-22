@@ -23,11 +23,7 @@ if (isset($_POST['login'])) {
 
         echo($message);
         include("./include/formLogin.php");
-    } else {
-        $connexion = mysqli_connect("localhost", "root", "", "nfactoryblog");
 
-        if (!$connexion) {
-            die("Erreur MySQL " . mysqli_connect_errno() . " : " . mysqli_connect_error());
         } else {
             // Requete permettant de me connecter a ma BDD
             $dsn = "mysql:dbname=nfactoryBlog;
@@ -36,11 +32,11 @@ if (isset($_POST['login'])) {
 // Login de votre BDD
             $username = "root";
 // MDP de votre BDD
-            $password = "";
+            $mdp = "";
 // Creation d'un
 //$db = new PDO($dsn,$username,$password);
             try {
-                $db = new PDO($dsn, $username, $password);
+                $db = new PDO($dsn, $username, $mdp);
             } catch (PDOException $e) {
                 echo($e->getMessage());
             }
@@ -68,7 +64,7 @@ if (isset($_POST['login'])) {
             }
             unset($db);
         }
-    }
+
 }
 else {
         include ("./include/formLogin.php");
