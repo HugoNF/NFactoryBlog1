@@ -69,5 +69,5 @@ if(isset($_SESSION['login'])) {
         include ("./include/FormArticle.php");
     }
 }else {
-    echo "vous n'avez pas accès a cette page ";
+    echo "vous n'avez pas accès a cette page AHAHAHAHAHHA";
 }
