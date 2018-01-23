@@ -20,7 +20,7 @@ if(isset($_SESSION['login']) == 1 ){
             }
             $message .= "</ul>";
             echo($message);
-            include("./include/FormArticle.php");
+            include("./include/formArticle");
         } else {
 // Requete permettant de me connecter a ma BDD
             $db = connectionPDO();
@@ -45,7 +45,7 @@ if(isset($_SESSION['login']) == 1 ){
             }
         }
     }else{
-        include ("./include/FormArticle.php");
+        include ("./include/formArticle.php");
     }
 }else {
     echo "vous n'avez pas accès a cette page AHAHAHAHAHHA";
