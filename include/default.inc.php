@@ -1,1 +1,1 @@
-<h1>Vous n'avez rien à faire là AHAH!</h1>
+<h1>default</h1>

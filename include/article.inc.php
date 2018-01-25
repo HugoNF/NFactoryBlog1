@@ -5,6 +5,7 @@ if(isset($_SESSION['login']) == 1 ){
         $titre = $_POST['titre'];
         $chapo = $_POST['chapo'];
         $message = $_POST['message'];
+
         if($_POST["titre"] == "")
             array_push($tabErreur, "Veuillez renseigné un titre");
         if($_POST["chapo"] == "")
@@ -12,7 +13,9 @@ if(isset($_SESSION['login']) == 1 ){
         if($_POST["message"] == ""){
             array_push($tabErreur, "Veuillez renseigné votre message");
         }else{
+
         }
+
         if(count($tabErreur) != 0) {
             $message = "<ul>";
             for($i = 0 ; $i < count($tabErreur) ; $i++) {
@@ -20,10 +23,13 @@ if(isset($_SESSION['login']) == 1 ){
             }
             $message .= "</ul>";
             echo($message);
-            include("./include/formArticle");
+            include("./include/FormArticle.php");
         } else {
+
 // Requete permettant de me connecter a ma BDD
+
             $db = connectionPDO();
+
             if (!$db) {
                 echo "Erreur de connexion";
             }
@@ -37,16 +43,19 @@ if(isset($_SESSION['login']) == 1 ){
                 if($result = $db->query($requete)) {
                     if ($ligne = $result->rowCount() > 0) {
                         $_SESSION['login'] = 1;
+
                     }
                     else
                         $_SESSION['login'] = 0;
+
                 }
                 unset($db);
             }
         }
+
     }else{
-        include ("./include/formArticle.php");
+        include ("./include/FormArticle.php");
     }
 }else {
-    echo "vous n'avez pas accès a cette page AHAHAHAHAHHA";
+    echo "vous n'avez pas accès a cette page ";
 }

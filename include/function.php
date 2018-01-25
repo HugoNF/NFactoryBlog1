@@ -1,5 +1,4 @@
 <?php
-function callback() {
 if (isset($_GET['page']) && $_GET['page'] != "") {
     $page = $_GET['page'];
 }
@@ -19,7 +18,5 @@ if(in_array($page, $incFiles)) {
 else {
     include("./include/default.inc.php");
 }
-}
-
 
 ?>

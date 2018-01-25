@@ -13,17 +13,25 @@ if (isset($_GET['page'])){
 }else{
     $pageActuelle = 1;
 }
+
+
 $sql ="SELECT * FROM t_articles LEFT JOIN t_categories_has_t_articles
-ON t_articles.ID_ARTICLE=t_categories_has_t_articles.T_ARTICLES_ID_ARTICLE LEFT JOIN t_categories ON t_categories_has_t_articles.T_CATEGORIES_ID_CATEGORIE=t_categories.ID_CATEGORIE";
+ ON t_articles.ID_ARTICLE=t_categories_has_t_articles.T_ARTICLES_ID_ARTICLE LEFT JOIN t_categories ON t_categories_has_t_articles.T_CATEGORIES_ID_CATEGORIE=t_categories.ID_CATEGORIE";
 $reponse = $db ->query($sql);
 $premiereEntree=($pageActuelle-1)*$msgParPage; // On calcul la première entrée à lire
+
 // La requête sql pour récupérer les messages de la page actuelle.
-$repons=$db->query('SELECT * FROM t_articles ORDER BY ID_ARTICLE DESC LIMIT '.$premiereEntree.', '.$msgParPage.'');
+$reponsee=$db->query('SELECT * FROM t_articles ORDER BY ID_ARTICLE DESC LIMIT '.$premiereEntree.', '.$msgParPage.'');
+
+
+
 while ($donnees= $reponse->fetch(PDO::FETCH_ASSOC)){
+
     echo (html_entity_decode( "<div>"."<br/>" . "<h2>".$donnees['ARTTITRE'] . "</h2>". "<br/>"
         . "<h3>".  $donnees['ARTCHAPO'] ."</h3>". "<br/>"
         . "<div>". $donnees['ARTCONTENU'] ."</div>" . "<br/>"
-        . "</div>" . $donnees['CATLIBELLE']."<hr/>"));
+        . "</div>" . $donnees['CATLIBELLE']."<a href='./rss.php'>Le flux RSS des articles</a>"."<hr/>"));
+
 }
 echo '<p align="center">Page : ';
 for($i=1; $i<=$nombreDePage; $i++)
@@ -39,3 +47,4 @@ for($i=1; $i<=$nombreDePage; $i++)
     }
 }
 echo '</p>';
+
