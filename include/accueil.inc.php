@@ -30,7 +30,7 @@ while ($donnees= $reponse->fetch(PDO::FETCH_ASSOC)){
     echo (html_entity_decode( "<div>"."<br/>" . "<h2>".$donnees['ARTTITRE'] . "</h2>". "<br/>"
         . "<h3>".  $donnees['ARTCHAPO'] ."</h3>". "<br/>"
         . "<div>". $donnees['ARTCONTENU'] ."</div>" . "<br/>"
-        . "</div>" . $donnees['CATLIBELLE']."<a href='./rss.php'>Le flux RSS des articles</a>"."<hr/>"));
+        . "</div>" . $donnees['CATLIBELLE']."<a href='./rss.php'><img src='../assets/img/rss.png'></a>"."<hr/>"));
 
 }
 echo '<p align="center">Page : ';
