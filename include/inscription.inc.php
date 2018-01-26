@@ -11,6 +11,7 @@ if(isset($_POST["formulaire"])) {
     $header.='Content-Type:text/html;charset="utf-8"'."\n";
     $header.='Content-Transfer-Encoding: 8bit';
 
+
     if($_POST["nom"] == ""){
         array_push($tabErreur, "Veuillez saisir votre nom");
     }
@@ -25,6 +26,9 @@ if(isset($_POST["formulaire"])) {
     }
     if($_POST["password"] == "")
         array_push($tabErreur, "Veuillez saisir un mot de passe");
+
+
+
 
     if(count($tabErreur) != 0) {
         $message = "<ul>";
@@ -47,23 +51,24 @@ if(isset($_POST["formulaire"])) {
             if (($ligne= $result->rowCount()) != 0){
                 echo "Votre e-mail est deja utilisé ";
             }else{
+                if(isset($_POST['captcha'])) {
+                    if($_POST['captcha'] != $_SESSION['captcha']) {
+                        echo "Captcha invalide !";
 
-
-                $mdp = sha1($mdp);
-
-
-                $longueurKey = 15;
-                $key = "";
-                for($i=1;$i<$longueurKey;$i++){
-                    $key .=mt_rand(0,9);
-                }
-                $requete = "INSERT INTO t_users (ID_USER, USERNAME, USERFNAME,
+                    } else {
+                        $longueurKey = 15;
+                        $key = "";
+                        for($i=1;$i<$longueurKey;$i++){
+                            $key .=mt_rand(0,9);
+                        }
+                        $mdp = sha1($mdp);
+                        $requete = "INSERT INTO t_users (ID_USER, USERNAME, USERFNAME,
                             USERMAIL, USERPASSWORD, USERDATEINS, T_ROLES_ID_ROLE,confirmkey)
                             VALUES (NULL, '$nom', '$prenom', '$mail', '$mdp', NULL, 5,$key);";
 
-                $result2=$db->query($requete);
+                        $result2=$db->query($requete);
 
-                $message='
+                        $message='
                 <html>
                     <body>
                         <div align="center">
@@ -71,7 +76,15 @@ if(isset($_POST["formulaire"])) {
                         </div>
                     </body>
                 </html>';
-                mail($mail,"Veuillez valider votre compte en utilisant cette clé:",$message,$header);
+                        mail($mail,"Veuillez valider votre compte en utilisant cette clé:",$message,$header);
+
+                    }
+                }
+
+
+
+
+
 
                 unset($db);
             }

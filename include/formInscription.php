@@ -1,11 +1,6 @@
-<?php
-if(isset($_POST['captcha'])) {
-if($_POST['captcha'] == $_SESSION['captcha']) {
-echo "Captcha valide !";
-} else {
-echo "Captcha invalide...";
-}
-}?>
+
+
+
 <form action='#' method="POST">
         <br>
         <div>
@@ -29,9 +24,8 @@ echo "Captcha invalide...";
         </div>
         <br>
         <div>
-            <img src="./include/captcha.php" />
+                <img src="captcha.php" />
                 <input type="text" name="captcha" />
-            <input type="submit" />
         </div>
         <br>
         <div>

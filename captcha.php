@@ -1,7 +1,8 @@
 <?php
+session_start();
 $_SESSION['captcha'] = mt_rand(1000,9999);
-$img = imagecreate(65,30);
-$font = './fonts/Destroy.ttf';
+$img = imagecreate(100,30);
+$font = 'fonts/impact.ttf';
 
 $bg = imagecolorallocate($img,255,255,255);
 $textcolor = imagecolorallocate($img, 0, 0, 0);
@@ -12,4 +13,3 @@ header('Content-type:image/jpeg');
 imagejpeg($img);
 imagedestroy($img);
 
-?>
