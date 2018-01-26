@@ -1,4 +1,10 @@
 <?php
+$share = '<a href="http://twitter.com/share" class="twitter-share-button" 
+  data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
+
+$share2 = '<a name="fb_share" type="box_count" share_url="http://www.example.com/page.html"></a>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>';
 $db = connectionPDO();
 $msgParPage = 5 ;
 $retourTotale = $db->query("SELECT COUNT(*) AS total FROM T_ARTICLES");
@@ -30,7 +36,7 @@ while ($donnees= $reponse->fetch(PDO::FETCH_ASSOC)){
     echo (html_entity_decode( "<div>"."<br/>" . "<h2>".$donnees['ARTTITRE'] . "</h2>". "<br/>"
         . "<h3>".  $donnees['ARTCHAPO'] ."</h3>". "<br/>"
         . "<div>". $donnees['ARTCONTENU'] ."</div>" . "<br/>"
-        . "</div>" . $donnees['CATLIBELLE']."<a href='./rss.php'><img src='../assets/img/rss.png'></a>"."<hr/>"));
+        . "</div>" . $donnees['CATLIBELLE'].$share.$share2."<a href='./rss.php'><img width='5%' src='./assets/img/rss.png'></a>"."<hr/>"));
 
 }
 echo '<p align="center">Page : ';
