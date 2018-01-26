@@ -6,6 +6,10 @@ if(isset($_POST["formulaire"])) {
     $prenom = $_POST['prenom'];
     $mail = trim($_POST['mail']);
     $mdp = trim($_POST['password']);
+    $header="MIME-Version: 1.0\r\n";
+    $header.='From:"PrimFX.com"<support@nfactory.com>'."\n";
+    $header.='Content-Type:text/html;charset="utf-8"'."\n";
+    $header.='Content-Transfer-Encoding: 8bit';
 
     if($_POST["nom"] == ""){
         array_push($tabErreur, "Veuillez saisir votre nom");
@@ -47,6 +51,7 @@ if(isset($_POST["formulaire"])) {
 
                 $mdp = sha1($mdp);
 
+
                 $longueurKey = 15;
                 $key = "";
                 for($i=1;$i<$longueurKey;$i++){
@@ -67,7 +72,6 @@ if(isset($_POST["formulaire"])) {
                     </body>
                 </html>';
                 mail($mail,"Veuillez valider votre compte en utilisant cette clé:",$message,$header);
-
 
                 unset($db);
             }

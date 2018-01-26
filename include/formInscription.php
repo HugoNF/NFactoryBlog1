@@ -1,3 +1,11 @@
+<?php
+if(isset($_POST['captcha'])) {
+if($_POST['captcha'] == $_SESSION['captcha']) {
+echo "Captcha valide !";
+} else {
+echo "Captcha invalide...";
+}
+}?>
 <form action='#' method="POST">
         <br>
         <div>
@@ -18,6 +26,12 @@
         <div>
              <label for="password">Mot de passe :</label>
              <input type="password" name="password" id="password" placeholder="Tapez votre Mot de passe">
+        </div>
+        <br>
+        <div>
+            <img src="./include/captcha.php" />
+                <input type="text" name="captcha" />
+            <input type="submit" />
         </div>
         <br>
         <div>
