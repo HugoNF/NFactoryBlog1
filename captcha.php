@@ -1,8 +1,8 @@
 <?php
 session_start();
 $_SESSION['captcha'] = mt_rand(1000,9999);
-$img = imagecreate(100,30);
-$font = 'fonts/impact.ttf';
+$img = imagecreate(65,30);
+$font = 'fonts/Destroy.ttf';
 
 $bg = imagecolorallocate($img,255,255,255);
 $textcolor = imagecolorallocate($img, 0, 0, 0);
