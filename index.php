@@ -28,7 +28,7 @@ echo ( "Ceci est votre ". $_COOKIE['visite'] ." visite !");
     <title>Blog</title>
 
     <script src="./assets/js/function.js"></script>
-    <script type="text/javascript" src="./assets/javascript/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="./assets/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
         tinymce.init({
             selector: 'textarea'
@@ -45,6 +45,5 @@ echo ( "Ceci est votre ". $_COOKIE['visite'] ." visite !");
     </main>
     <?php include_once("./include/footer.php");?>
 </div>
-
 </body>
 </html>

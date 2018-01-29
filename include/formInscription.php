@@ -1,6 +1,3 @@
-
-
-
 <form action='#' method="POST">
         <br>
         <div>
@@ -24,8 +21,8 @@
         </div>
         <br>
         <div>
-                <img src="captcha.php" />
-                <input type="text" name="captcha" />
+            <img src="captcha.php" />
+            <input type="text" name="captcha" />
         </div>
         <br>
         <div>
