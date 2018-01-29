@@ -21,7 +21,7 @@ if($_SESSION['admin']==1) {
             <option value='4'>4</option>
             <option value='5'>5</option>
             </select> "."</td>"
-            ."<td>"."<input type='text' name='id'>".
+            ."<td>".
             "<input type='submit' value='Mettre a jour' name='formulaire'>"."</form>"."</td>"."</tr>");
 
     }
