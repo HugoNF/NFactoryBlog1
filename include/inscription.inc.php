@@ -49,9 +49,14 @@ if(isset($_POST["formulaire"])) {
             if (($ligne= $result->rowCount()) != 0){
                 echo "Votre e-mail est deja utilisé ";
             }else{
+                if(isset($_POST['check1'])) {
                 if(isset($_POST['captcha'])) {
                     if($_POST['captcha'] != $_SESSION['captcha']) {
                         echo "Captcha invalide !";
+
+
+
+
 
                     } else {
                         $longueurKey = 15;
@@ -79,6 +84,9 @@ if(isset($_POST["formulaire"])) {
                     }
                 }
                 unset($db);
+                } else {
+                    echo "vous n'avez pas validez les cgu";
+                }
             }
 
         }else{

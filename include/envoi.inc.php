@@ -1,5 +1,5 @@
 <?php
-$id = $_SESSION['id'];
+/*$id = $_SESSION['id'];
 $db=connectionPDO();
 
 if(isset($_SESSION['id'])) {
@@ -14,7 +14,7 @@ if(isset($_SESSION['id'])) {
             if($dest_exist == 1) {
                 $id_destinataire = $id_destinataire->fetch();
                 $id_destinataire = $id_destinataire['id'];
-                $ins = $bdd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message) VALUES (?,?,?)');
+                $ins = $db->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message) VALUES (?,?,?)');
                 $ins->execute(array($_SESSION['id'],$id_destinataire,$message));
                 $error = "Votre message a bien été envoyé !";
             } else {
@@ -28,9 +28,9 @@ if(isset($_SESSION['id'])) {
     ?>
     <form method="post">
         <label>Destinataire:</label>
-        <!-- <select name="destinataire">
+            <select name="destinataire">
             <?php while($d = $destinataires->fetch()) { ?>
-            <option><?= $d['USERNAME'] ?></option>
+            <option><?= $d['id'] ?></option>
             <?php } ?>
          </select> -->
         <input type="text" name="destinataire" />
@@ -39,7 +39,7 @@ if(isset($_SESSION['id'])) {
         <br /><br />
         <input type="submit" value="Envoyer" name="envoi_message" />
         <br /><br />
-        <?php if(isset($error)) { echo '<span style="color:red">'.$error.'</span>'; } ?>
+        <?php if(isset($error)) { echo '<span style="color:lawngreen">'.$error.'</span>'; } ?>
     </form>
     <br />
     <a href="index.php?page=reception\">Boîte de réception</a>

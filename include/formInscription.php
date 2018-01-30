@@ -25,7 +25,15 @@
             <input type="text" name="captcha" />
         </div>
         <br>
+        <div class="form-group">
+            <input type="checkbox" id="checkbox1" name="check1">
+            <label for="checkbox1">Veuillez validez nos <a href="Prank.php" target="_blank">CGU </a></label>
+        </div>
+        <br>
         <div>
             <input type="submit" value="Envoyer !" name="formulaire">
         </div>
     </form>
+
+
+<a href="rss.php">Flux RSS</a>
